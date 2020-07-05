@@ -1,2 +1,1 @@
-# PrometheusGrafanaAlertManager
-Prometheus GrafanaAlert Manager CheatSheet
+# Prometheus GrafanaAlert Manager CheatSheet
