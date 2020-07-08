@@ -13,7 +13,8 @@ dnf clean all
 
 #### Create initial database
 Run the following on your database host.
-```mysql -uroot -p
+```
+mysql -uroot -p
 password
 mysql> create database zabbix character set utf8 collate utf8_bin;
 mysql> create user zabbix@localhost identified by 'password';
@@ -22,7 +23,9 @@ mysql> quit;
 ```
 
 On Zabbix server host import initial schema and data. You will be prompted to enter your newly created password.
-`zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix`
+```
+zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
+```
 
 #### Configure the database for Zabbix server
 
@@ -64,11 +67,10 @@ tar -xzf zabbix_agent*.tar.gz
 vi conf/zabbix_agentd.conf
 Server=<zabbixMonitoringServerIP>
 ```
-*NOTE:* If you are running it with root user update AllowRoot parameter in conf/zabbix_agentd.conf too:
+*NOTE:* If you are running it with root user update AllowRoot parameter in `conf/zabbix_agentd.conf` too:
+```
 AllowRoot=1
+```
 
 Start the process:
 `./sbin/zabbix_agentd -c conf/zabbix_agentd.conf`
-
-
-*
