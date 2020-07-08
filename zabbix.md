@@ -57,7 +57,15 @@ systemctl enable zabbix-server zabbix-agent httpd php-fpm
 #### Configure Zabbix frontend
 Connect to your newly installed Zabbix frontend: http://server_ip_or_name/zabbix
 
-
+*NOTE:-* If you are unable to access the zabbix UI(issue faced in VBox VM) check below:
+```
+systemctl status firewalld
+systemctl stop firewalld
+systemctl disable firewalld
+systemctl status firewalld
+```
+----
+----
 ### Agent installation on host to monitor
 * Switch to non-root user:
 ```
