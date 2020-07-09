@@ -34,7 +34,7 @@ Time durations are specified as a number, followed immediately by one of the fol
 * In this example, we select all the values we have recorded within the last 5 minutes for all time series that have the metric name http_requests_total and a job label set to prometheus:
 `http_requests_total{job="prometheus"}[5m]`
 
-*Offset modifier:* The offset modifier allows changing the time offset for individual instant and range vectors in a query.
+**Offset modifier:** The offset modifier allows changing the time offset for individual instant and range vectors in a query.
 
 * For example, the following expression returns the value of http_requests_total 5 minutes in the past relative to the current query evaluation time:
     `http_requests_total offset 5m`
@@ -59,7 +59,7 @@ The same works for range vectors. This returns the 5-minute rate that http_reque
 
     `http_requests_total{job="apiserver", handler="/api/comments"}[5m]`
 
-*NOTE:* An expression resulting in a range vector cannot be graphed directly, but viewed in the tabular ("Console") view of the expression browser.
+**NOTE:** An expression resulting in a range vector cannot be graphed directly, but viewed in the tabular ("Console") view of the expression browser.
 
 * Using regular expressions, you could select time series only for jobs whose name match a certain pattern, in this case, all jobs that end with server:
 
@@ -152,7 +152,7 @@ Like PromQL, LogQL supports a subset of built-in aggregation operators that can 
 ```
 sum by (cpu) (rate(node_cpu_seconds_total{mode='idle'}[5m]))
 OR
-sum (rate(node_cpu_seconds_total{mode='idle'}[5m])) by (cpu) 
+sum (rate(node_cpu_seconds_total{mode='idle'}[5m])) by (cpu)
 ```
 * CPU idle seconds sum by CPU / total CPU seconds by CPU:
 ```
